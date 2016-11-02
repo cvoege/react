@@ -856,7 +856,8 @@ var ReactCompositeComponent = {
         if (this._compositeType === CompositeTypes.PureClass) {
           shouldUpdate =
             !shallowEqual(prevProps, nextProps) ||
-            !shallowEqual(inst.state, nextState);
+            !shallowEqual(inst.state, nextState) ||
+            !shallowEqual(inst.context, nextContext);
         }
       }
     }
